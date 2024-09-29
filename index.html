@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4ee361ff45.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img class="logo" src="images/logo.png" alt="Meraj" title="Meraj">
+                <ul id="sidemenu">
+                    <li><a class="homebtn" href="#header" style="color: #ffffff;font-weight: bold;">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <p>
+                    Java Developer
+                </p>
+                <h1>
+                    Hi, I'm<br> <span>Meraj </span>Siddique<br> From Lucknow
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------about------------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">
+                        About Me
+                    </h1>
+                    <p>
+                        Hello! My name is Meraj Siddique, and I am currently pursuing my Bachelor's degree in Technology
+                        (B.Tech) with a
+                        specialization in ( AI & ML ) at BNCET. As a second-year student, I am enthusiastic about
+                        learning new
+                        technologies and acquiring hands-on experience in various fields of engineering and programming.
+                        My interests lie in
+                        areas like coding, web development, and exploring innovative tech solutions. I am excited to be
+                        part of this journey and
+                        eager to expand my knowledge and skills to contribute to future technological advancements.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>FRONT-END DEVELOPMENT</span><br>HTML, CSS, Java Script...</li>
+                            <li><span>BACK-END DEVELOPMENT</span><br>Java (Core Java, Oops, String, Collections, JDBC,
+                                Servlet, JSP), C language...</li>
+                            <li><span>DATABASE</span><br>MySQL...</li>
+                            <br>
+                            <div class="per">
+                                <div class="skill">
+                                    <div class="outer">
+                                        <div class="inner">
+                                            <div id="number">
+                                                80%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="140px" height="140px">
+                                        <defs>
+                                            <linearGradient id="GradientColor">
+                                                <stop offset="0%" stop-color="#e91e63" />
+                                                <stop offset="100%" stop-color="#673ab7" />
+                                            </linearGradient>
+                                        </defs>
+                                        <circle cx="60" cy="60" r="55" stroke-linecap="round" />
+                                    </svg>
+
+                                </div>
+
+                                <script>
+                                    let number = document.getElementById("number");
+                                    let counter = 0;
+                                    setInterval(() => {
+                                        if (counter == 80) {
+                                            clearInterval();
+                                        }
+                                        else {
+                                            counter += 1;
+                                            number.innerHTML = counter + "%<br>HTML";
+                                        }
+                                    }, 25);
+                                </script>
+
+                                <div class="skill">
+                                    <div class="outer">
+                                        <div class="inner">
+                                            <div id="number1">
+                                                70%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                        <defs>
+                                            <linearGradient id="GradientColor">
+                                                <stop offset="0%" stop-color="#e91e63" />
+                                                <stop offset="100%" stop-color="#673ab7" />
+                                            </linearGradient>
+                                        </defs>
+                                        <circle class="circle2" cx="60" cy="60" r="55" stroke-linecap="round" />
+                                    </svg>
+
+                                </div>
+
+                                <script>
+                                    let number1 = document.getElementById("number1");
+                                    let counter1 = 0;
+                                    setInterval(() => {
+                                        if (counter1 == 70) {
+                                            clearInterval();
+                                        }
+                                        else {
+                                            counter1 += 1;
+                                            number1.innerHTML = counter1 + "%<br>CSS";
+                                        }
+                                    }, 30);
+                                </script>
+
+                                <div class="skill">
+                                    <div class="outer">
+                                        <div class="inner">
+                                            <div id="number2">
+                                                50%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                        <defs>
+                                            <linearGradient id="GradientColor">
+                                                <stop offset="0%" stop-color="#e91e63" />
+                                                <stop offset="100%" stop-color="#673ab7" />
+                                            </linearGradient>
+                                        </defs>
+                                        <circle class="circle3" cx="60" cy="60" r="55" stroke-linecap="round" />
+                                    </svg>
+
+                                </div>
+
+                                <script>
+                                    let number2 = document.getElementById("number2");
+                                    let counter2 = 0;
+                                    setInterval(() => {
+                                        if (counter2 == 50) {
+                                            clearInterval();
+                                        }
+                                        else {
+                                            counter2 += 1;
+                                            number2.innerHTML = counter2 + "%<br>JavaScript";
+                                        }
+                                    }, 40);
+                                </script>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>YouTube CLONE</span><br>Using HTML, CSS, Java Script...</li>
+                            <li><span>FOOD DELIVERY SYSTEM</span><br>Using Java...</li>
+                            <li><span>SHADI.com</span><br>Using Core Java...</li>
+                            <li><span>AGE CALCULATOR</span><br>Using HTML, CSS, Java Script...</li>
+                            <li><span>MATRIX PROBLEM SOLVING</span><br>Using C Language...</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020</span><br>High School<br>marks 87.3%</li>
+                            <li><span>2022</span><br>Intermediate<br>marks 79.8%</li>
+                            <li><span>Current</span><br>B.Tech CSE AI & ML</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------services------------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-globe"></i>
+                    <h2 class="heading">Web Design</h2>
+                    <p>
+                        As a web designer, I see my role as a blend of creativity and technical skill, where I transform
+                        ideas into engaging,
+                        functional websites. For me, it's about crafting visually appealing layouts, choosing the right
+                        color schemes, and
+                        creating an intuitive user experience that makes a website not only look good but work
+                        seamlessly.
+                    </p>
+                    <a href="https://www.w3schools.com/where_to_start.asp" target="_blank" title="Click Here">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-java"></i>
+                    <h2 class="heading">Java Developer</h2>
+                    <p>
+                        As a Java developer, I see myself as someone who builds efficient, scalable, and robust
+                        applications. Java’s versatility
+                        allows me to work on a wide range of projects, from backend systems and desktop applications to
+                        mobile apps and
+                        enterprise solutions.
+                    </p>
+                    <a href="https://www.javatpoint.com/java-tutorial" target="_blank" title="Click Here">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-google"></i>
+                    <h2 class="heading">Co-Lead of GDG at BNCET</h2>
+                    <p>
+                        As a co-lead in Google Developer Group (GDG), I take pride in fostering a collaborative environment where developers can
+                        learn, grow, and share knowledge. My role involves organizing events, workshops, and meetups that connect the tech
+                        community, providing opportunities to explore the latest Google technologies, frameworks, and tools.
+                    </p>
+                    <a href="https://gdg.community.dev/gdg-on-campus-bn-college-of-engineering-technology-lucknow-india/" target="_blank" title="Click Here">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------portfolio--------------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.jpg">
+                    <div class="layer">
+                        <h3>
+                            YouTube Clone
+                        </h3>
+                        <p>
+                        I created a YouTube clone to replicate the core functionalities of the popular video-sharing platform. This project
+                        allowed me to better understand how complex video platforms are structured and how various features interact to provide
+                        a seamless user experience.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.jpg">
+                    <div class="layer">
+                        <h3>
+                            Age Calculator
+                        </h3>
+                        <p>
+                        I developed an age calculator to simplify the process of calculating a person's age based on their date of birth. The
+                        tool provides users with an accurate age in years, months, and days. It’s designed to be intuitive, fast, and
+                        user-friendly.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images\work-3.jpg">
+                    <div class="layer">
+                        <h3>
+                            Food Delivery System
+                        </h3>
+                        <p>
+                        I developed a food delivery system to replicate the functionalities of popular food delivery platforms. This project was
+                        aimed at creating a user-friendly interface for customers to browse restaurants, select meals, place orders, and track
+                        deliveries.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn"> See more</a>
+        </div>
+    </div>
+    <!-- -----contact-------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane" title="Email"></i> merajsheikh962857@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone" title="Call Me"></i> 9120836xxx</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/sheikh.meraj.96?mibextid=ZbWKwL" target="_blank" title="Facebook"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/invites/contact/?i=vjpcj9u8d5ux&utm_content=3visgi2"
+                            target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/merajsiddique07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/merajsiddique07?t=AuSY3KVj1ygeEpEv839fLQ&s=09" target="_blank" title="Twitter"><i
+                                class="fa-brands fa-square-twitter"></i></i></a>
+                    </div>
+                    <a id="dbtn" href="images\my-cv.pdf" download class="btn btn2" title="Download CV">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button id="dbtn" type="submit" class="btn btn2" title="Submit">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>
+                Copyright © Meraj. Made with <i class="fa-solid fa-heart" title="&#10084"></i> by Meraj Siddique
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw6HQblpOMX5JZyp-eNRSA37CeDnTbGxslAL54Ym9YDjOQIFXwnzHnF366rpRQkyXEp/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "&#10004 Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+
+</html>
