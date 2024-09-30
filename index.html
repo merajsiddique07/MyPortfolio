@@ -46,7 +46,50 @@
 
             <!-- Adding the audio element for the click sound -->
             <audio id="likeSound" src="images/click-sound.mp3"></audio>
+            <script>
+                let liked = false;
 
+// Simulating a globally stored like count (this would come from the server in a real-world app)
+let globalLikeCount = localStorage.getItem('globalLikeCount') ? parseInt(localStorage.getItem('globalLikeCount')) : 0;
+
+// Retrieve the user's like status from localStorage (so they can only like once)
+let likedStatus = localStorage.getItem('liked') ? JSON.parse(localStorage.getItem('liked')) : false;
+
+// Update the like count and UI when the page loads
+document.getElementById("likeCount").innerText = globalLikeCount;
+
+if (likedStatus) {
+  liked = true;
+  document.getElementById("heartIcon").classList.remove("far");
+  document.getElementById("heartIcon").classList.add("fas", "filled");
+}
+
+// Add click event listener to the heart icon
+document.getElementById("heartIcon").addEventListener("click", function() {
+  if (!liked) {
+    // Increase the global like count (simulate this coming from the server)
+    globalLikeCount++;
+    document.getElementById("likeCount").innerText = globalLikeCount;
+
+    // Save the updated global like count to localStorage (simulate storing it globally)
+    localStorage.setItem('globalLikeCount', globalLikeCount);
+
+    // Set the user's like status to prevent multiple likes from the same user
+    localStorage.setItem('liked', true);
+    liked = true;
+
+    // Change the heart from outlined to filled and red
+    this.classList.remove("far");
+    this.classList.add("fas", "filled");
+
+    // Play the like sound
+    document.getElementById("likeSound").play();
+  }
+});
+
+            </script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
             <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
@@ -83,9 +126,7 @@
             });
 
     </script>
-    
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+
         </div>
         </div>
     </div>
