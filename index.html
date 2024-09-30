@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
 </head>
 
 <body>
@@ -38,96 +40,46 @@
                     Hi, I'm<br> <span>Meraj </span>Siddique<br> From Lucknow
                 </h1>
             </div>
-            <div class="likebtn">
-                <div class="like-container"></div>
-                <i id="heartIcon" class="far fa-heart like-heart"></i>
-                <span id="likeCount">0</span>
-            </div>
+            <div>
+     <div id="likeSection">
+  <i id="heartIcon" class="far fa-heart" style="font-size: 24px; cursor: pointer;"></i>
+  <span id="likeCount">0</span>
+</div>
+<audio id="likeSound" src="like-sound.mp3"></audio> <!-- Optional sound -->
+    <audio id="likeSound" src="images/click-sound.mp3"></audio>
+    <script>
+        var firebaseConfig = {
+  apiKey: "AIzaSyAqXvEg4HK0KKCuMTR51JbZvah6EwHidwM",
+  authDomain: "likebutton-35b07.firebaseapp.com",
+  databaseURL: "https://likebutton-35b07-default-rtdb.firebaseio.com",
+  projectId: "likebutton-35b07",
+  storageBucket: "likebutton-35b07.appspot.com",
+  messagingSenderId: "253158490673",
+  appId: "1:253158490673:web:c3bf0ebe43fa29d0118b10"
+};
+ var database = initializeApp(firebaseConfig);
+        // Reference to like count in Firebase
+var likeCountRef = database.ref('likeCount');
 
-            <!-- Adding the audio element for the click sound -->
-            <audio id="likeSound" src="images/click-sound.mp3"></audio>
-            <script>
-                let liked = false;
-
-// Simulating a globally stored like count (this would come from the server in a real-world app)
-let globalLikeCount = localStorage.getItem('globalLikeCount') ? parseInt(localStorage.getItem('globalLikeCount')) : 0;
-
-// Retrieve the user's like status from localStorage (so they can only like once)
-let likedStatus = localStorage.getItem('liked') ? JSON.parse(localStorage.getItem('liked')) : false;
-
-// Update the like count and UI when the page loads
-document.getElementById("likeCount").innerText = globalLikeCount;
-
-if (likedStatus) {
-  liked = true;
-  document.getElementById("heartIcon").classList.remove("far");
-  document.getElementById("heartIcon").classList.add("fas", "filled");
-}
-
-// Add click event listener to the heart icon
-document.getElementById("heartIcon").addEventListener("click", function() {
-  if (!liked) {
-    // Increase the global like count (simulate this coming from the server)
-    globalLikeCount++;
-    document.getElementById("likeCount").innerText = globalLikeCount;
-
-    // Save the updated global like count to localStorage (simulate storing it globally)
-    localStorage.setItem('globalLikeCount', globalLikeCount);
-
-    // Set the user's like status to prevent multiple likes from the same user
-    localStorage.setItem('liked', true);
-    liked = true;
-
-    // Change the heart from outlined to filled and red
-    this.classList.remove("far");
-    this.classList.add("fas", "filled");
-
-    // Play the like sound
-    document.getElementById("likeSound").play();
-  }
+// Retrieve like count from Firebase and display
+likeCountRef.on('value', (snapshot) => {
+  const likeCount = snapshot.val() || 0;
+  document.getElementById("likeCount").innerText = likeCount;
 });
 
-            </script>
-        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
-            <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+// Increment like count on button click
+document.getElementById("heartIcon").addEventListener("click", function() {
+  likeCountRef.transaction((currentCount) => {
+    return (currentCount || 0) + 1;
+  });
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAqXvEg4HK0KKCuMTR51JbZvah6EwHidwM",
-            authDomain: "likebutton-35b07.firebaseapp.com",
-            databaseURL: "https://likebutton-35b07-default-rtdb.firebaseio.com",
-            projectId: "likebutton-35b07",
-            storageBucket: "likebutton-35b07.appspot.com",
-            messagingSenderId: "253158490673",
-            appId: "1:253158490673:web:c3bf0ebe43fa29d0118b10"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        // Reference to the like count in the database
-            var likeCountRef = database.ref('likeCount');
-
-            // Retrieve the current like count and update it in real-time
-            likeCountRef.on('value', (snapshot) => {
-                const likeCount = snapshot.val() || 0;
-                document.getElementById("likeCount").innerText = likeCount;
-            });
-
-            // Increment the like count when the user clicks the button
-            document.getElementById("heartIcon").addEventListener("click", function () {
-                likeCountRef.transaction((currentCount) => {
-                    return (currentCount || 0) + 1;
-                });
-            });
+  // Play sound (optional)
+  document.getElementById("likeSound").play();
+});
 
     </script>
-
-        </div>
+            </div>
+            
         </div>
     </div>
     <!-- ---------------about------------ -->
