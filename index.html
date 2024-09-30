@@ -38,6 +38,36 @@
                     Hi, I'm<br> <span>Meraj </span>Siddique<br> From Lucknow
                 </h1>
             </div>
+            <div class="likebtn">
+                <div class="like-container"></div>
+                <i id="heartIcon" class="far fa-heart like-heart"></i>
+                <span id="likeCount">0</span>
+            </div>
+
+            <!-- Adding the audio element for the click sound -->
+            <audio id="likeSound" src="images/click-sound.mp3"></audio>
+
+            <script>
+                let likeCount = 0;
+                let liked = false;
+
+                document.getElementById("heartIcon").addEventListener("click", function () {
+                    if (!liked) {
+                        likeCount++;
+                        document.getElementById("likeCount").innerText = likeCount;
+                        liked = true;
+
+                        // Change heart from outlined to filled and red
+                        this.classList.remove("far");
+                        this.classList.add("fas", "filled");
+
+                        // Play the like sound
+                        document.getElementById("likeSound").play();
+                    }
+                });
+
+            </script>
+        </div>
         </div>
     </div>
     <!-- ---------------about------------ -->
