@@ -12,8 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <!-- Add this in the <head> section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
 <body>
@@ -47,6 +48,8 @@
 </div>
 <audio id="likeSound" src="like-sound.mp3"></audio> <!-- Optional sound -->
     <audio id="likeSound" src="images/click-sound.mp3"></audio>
+                  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
     <script>
         var firebaseConfig = {
   apiKey: "AIzaSyAqXvEg4HK0KKCuMTR51JbZvah6EwHidwM",
@@ -57,24 +60,31 @@
   messagingSenderId: "253158490673",
   appId: "1:253158490673:web:c3bf0ebe43fa29d0118b10"
 };
- var database = initializeApp(firebaseConfig);
-        // Reference to like count in Firebase
+        // Your Firebase configuration
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
+// Reference to the like count in Firebase
 var likeCountRef = database.ref('likeCount');
 
-// Retrieve like count from Firebase and display
+// Retrieve and display the current like count
 likeCountRef.on('value', (snapshot) => {
-  const likeCount = snapshot.val() || 0;
-  document.getElementById("likeCount").innerText = likeCount;
+    const likeCount = snapshot.val() || 0;
+    document.getElementById("likeCount").innerText = likeCount;
 });
 
-// Increment like count on button click
-document.getElementById("heartIcon").addEventListener("click", function() {
-  likeCountRef.transaction((currentCount) => {
-    return (currentCount || 0) + 1;
-  });
+// Add event listener to the heart icon
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("heartIcon").addEventListener("click", function() {
+        // Increment the like count in Firebase
+        likeCountRef.transaction((currentCount) => {
+            return (currentCount || 0) + 1;
+        });
 
-  // Play sound (optional)
-  document.getElementById("likeSound").play();
+        // Optional: Play sound on click
+        document.getElementById("likeSound").play();
+    });
 });
 
     </script>
