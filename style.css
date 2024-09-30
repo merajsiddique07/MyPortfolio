@@ -568,3 +568,23 @@ flex-wrap: wrap;
     }
 
 }
+ .heart {
+      font-size: 40px;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      transition: color 0.3s ease;
+  }
+
+  .heart.liked {
+      color: rgb(255, 40, 130);
+      text-shadow: 1px 3px 6px rgba(255, 255, 255, 0.826);
+  }
+
+  .count {
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 5px;
+  }
+  .likebtn{
+    margin-top: 10px;
+  }
