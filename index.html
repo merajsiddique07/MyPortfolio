@@ -39,6 +39,15 @@
                     Hi, I'm<br> <span>Meraj </span>Siddique<br> From Lucknow
                 </h1>
             </div>
+            <div class="likebtn">
+                  <div>
+        <span id="heart-icon" class="heart"><i class="far fa-heart"></i></span>
+        <span class="count" id="like-count">0</span>
+    </div>
+
+    <!-- Add the audio element for the click sound -->
+    <audio id="click-sound" src="images/click-sound.mp3"></audio>
+            </div>
         </div>
     </div>
     <!-- ---------------about------------ -->
@@ -382,6 +391,45 @@
         })
     </script>
 
+    <script>
+        // Initialize variables
+            const heartIcon = document.getElementById('heart-icon');
+            const likeCountElement = document.getElementById('like-count');
+            const clickSound = document.getElementById('click-sound'); // Reference the audio element
+
+            // Check if the user has already liked
+            let hasLiked = localStorage.getItem('hasLiked');
+            let likeCount = localStorage.getItem('likeCount') || 0;
+
+            // Display initial like count
+            likeCountElement.textContent = likeCount;
+
+            // Update the heart icon based on whether the user liked or not
+            if (hasLiked === 'true') {
+                heartIcon.classList.add('liked');
+                heartIcon.innerHTML = '<i class="fas fa-heart"></i>'; // Filled heart
+            }
+
+            // Add event listener to the heart icon
+            heartIcon.addEventListener('click', function () {
+                if (!heartIcon.classList.contains('liked')) {
+                    // Increase the like count
+                    likeCount++;
+                    likeCountElement.textContent = likeCount;
+
+                    // Save like count and user's like status in localStorage
+                    localStorage.setItem('hasLiked', 'true');
+                    localStorage.setItem('likeCount', likeCount);
+
+                    // Change the heart icon to filled
+                    heartIcon.classList.add('liked');
+                    heartIcon.innerHTML = '<i class="fas fa-heart"></i>'; // Filled heart
+
+                    // Play the click sound
+                    document.getElementById('click-sound').play();
+                }
+            });
+    </script>
 </body>
 
 </html>
