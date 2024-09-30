@@ -568,3 +568,30 @@ flex-wrap: wrap;
     }
 
 }
+.like-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.like-heart {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.filled {
+    color: rgb(252, 31, 123);
+    text-shadow: 1px 2px 5px rgba(255, 253, 253, 0.712);
+}
+
+.likebtn{
+   margin-top: 20px;
+}
+#likeCount{
+    font-size: 22px;
+   font-family:arial;
+   font-weight: bold;
+   padding-left:3px;
+}
