@@ -47,26 +47,45 @@
             <!-- Adding the audio element for the click sound -->
             <audio id="likeSound" src="images/click-sound.mp3"></audio>
 
-            <script>
-                let likeCount = 0;
-                let liked = false;
+            <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
-                document.getElementById("heartIcon").addEventListener("click", function () {
-                    if (!liked) {
-                        likeCount++;
-                        document.getElementById("likeCount").innerText = likeCount;
-                        liked = true;
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAqXvEg4HK0KKCuMTR51JbZvah6EwHidwM",
+            authDomain: "likebutton-35b07.firebaseapp.com",
+            databaseURL: "https://likebutton-35b07-default-rtdb.firebaseio.com",
+            projectId: "likebutton-35b07",
+            storageBucket: "likebutton-35b07.appspot.com",
+            messagingSenderId: "253158490673",
+            appId: "1:253158490673:web:c3bf0ebe43fa29d0118b10"
+        };
 
-                        // Change heart from outlined to filled and red
-                        this.classList.remove("far");
-                        this.classList.add("fas", "filled");
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // Reference to the like count in the database
+            var likeCountRef = database.ref('likeCount');
 
-                        // Play the like sound
-                        document.getElementById("likeSound").play();
-                    }
+            // Retrieve the current like count and update it in real-time
+            likeCountRef.on('value', (snapshot) => {
+                const likeCount = snapshot.val() || 0;
+                document.getElementById("likeCount").innerText = likeCount;
+            });
+
+            // Increment the like count when the user clicks the button
+            document.getElementById("heartIcon").addEventListener("click", function () {
+                likeCountRef.transaction((currentCount) => {
+                    return (currentCount || 0) + 1;
                 });
+            });
 
-            </script>
+    </script>
+    
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
         </div>
         </div>
     </div>
