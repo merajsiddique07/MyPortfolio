@@ -393,14 +393,14 @@
     <script>
         // Initialize variables
             const heartIcon = document.getElementById('heart-icon');
-            const likeCountElement = document.getElementById('0');
+            //const likeCountElement = document.getElementById('0');
             const clickSound = document.getElementById('click-sound'); // Reference the audio element
 
             // Check if the user has already liked
             let hasLiked = localStorage.getItem('hasLiked');
-            let likeCount = localStorage.getItem('likeCount') || 0;
+          //  let likeCount = localStorage.getItem('likeCount') || 0;
 
-            // // Display initial like count
+            //  Display initial like count
             // likeCountElement.textContent = likeCount;
 
             // Update the heart icon based on whether the user liked or not
@@ -413,12 +413,12 @@
             heartIcon.addEventListener('click', function () {
                 if (!heartIcon.classList.contains('liked')) {
                     // Increase the like count
-                    likeCount++;
-                    likeCountElement.textContent = likeCount;
+                   // likeCount++;
+                   // likeCountElement.textContent = likeCount;
 
                     // Save like count and user's like status in localStorage
                     localStorage.setItem('hasLiked', 'true');
-                    localStorage.setItem('likeCount', likeCount);
+                  //  localStorage.setItem('likeCount', likeCount);
 
                     // Change the heart icon to filled
                     heartIcon.classList.add('liked');
