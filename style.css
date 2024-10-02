@@ -568,23 +568,63 @@ flex-wrap: wrap;
     }
 
 }
- .heart {
-      font-size: 40px;
-      cursor: pointer;
-      color: rgb(255, 255, 255);
-      transition: color 0.3s ease;
-  }
+        /* Wrapper to position the button and hearts */
+.heart-wrapper {
+    position: relative;
+    display: inline-block;
+}
 
-  .heart.liked {
-      color: rgb(255, 40, 130);
-      text-shadow: 1px 3px 6px rgba(255, 255, 255, 0.826);
-  }
+/* Style the heart button */
+.heart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
 
-  .count {
-      font-size: 25px;
-      font-weight: bold;
-      margin-left: 5px;
-  }
-  .likebtn{
-    margin-top: 10px;
-  }
+.heart-btn i {
+    color: #e0e0e0; /* Default heart color */
+    font-size: 30px;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* When the button is clicked */
+.heart-btn.active i {
+    color: rgb(255, 35, 200);
+    transform: scale(1.2);
+}
+
+/* Container for small hearts */
+.heart-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevent blocking clicks */
+    z-index: 0;
+}
+
+/* Style for the small hearts */
+.small-heart {
+    position: absolute;
+    font-size: 15px;
+    color: rgb(255, 35, 200);
+    opacity: 1;
+    animation: floatUp 1s ease-out forwards;
+}
+
+/* Animation to move the small hearts upwards */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0.5);
+        opacity: 0;
+    }
+}
