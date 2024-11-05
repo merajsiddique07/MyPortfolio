@@ -501,6 +501,22 @@
             }, 1000);
         }
 
+          document.getElementById("toggleButton").addEventListener("click", function() {
+    const extraCode = document.getElementById("extraCode");
+    
+    if (extraCode.classList.contains("show")) {
+        // Collapse content
+        extraCode.style.height = "0";
+        extraCode.classList.remove("show");
+        this.textContent = "Show More";
+    } else {
+        // Expand content
+        extraCode.style.height = extraCode.scrollHeight + "px";
+        extraCode.classList.add("show");
+        this.textContent = "Show Less";
+    }
+});
+        
     </script>
 </body>
 
