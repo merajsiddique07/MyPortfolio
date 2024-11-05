@@ -628,3 +628,18 @@ flex-wrap: wrap;
         opacity: 0;
     }
 }
+   #extraCode {
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 0 10px;
+    transition: height 0.4s ease, padding 0.4s ease;
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#toggleButton{
+    background-color: #000000;
+}
+#toggleButton:hover{
+    background-color: #ff004f;
+}
