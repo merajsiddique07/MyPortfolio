@@ -15,25 +15,27 @@
         rel="stylesheet">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHTQG6ZTFS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-PHTQG6ZTFS');
-</script>
+        gtag('config', 'G-PHTQG6ZTFS');
+    </script>
 </head>
 
 <body>
     <div id="header">
         <div class="container">
             <nav>
-                <img class="logo" src="images/logo.png" alt="Meraj" title="Meraj">
+                <div
+                    style="background-color: #ff0bc6; font-size: 30px; font-weight: bold; width: 55px; height: 43px; border-radius: 10px;padding: 5px;">
+                    MS</div>
                 <ul id="sidemenu">
                     <li><a class="homebtn" href="#header" style="color: #ffffff;font-weight: bold;">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#problem">Problem Solving</a></li>
+                    <li><a href="#Projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
@@ -41,26 +43,21 @@
             </nav>
 
             <div class="header-text">
-                <p>
-                    Java Developer
-                </p>
+
                 <h1>
-                    Hi, I'm<br> <span>Meraj </span>Siddique<br> From Lucknow
+                    Hi, I'm<br> <span>Meraj </span>Siddique<br>MERN Full Stack Developer
                 </h1>
             </div>
-            <div class="likebtn">
-              <div class="heart-wrapper">
-                <button class="heart-btn">
-                    <i class="fas fa-heart"></i>
-                </button>
-                <!-- Container for small hearts -->
-                <div class="heart-container"></div>
-            </div>
-            <audio id="heart-sound" src="images/sound.mp3"></audio>
-        </div>
+            <div style="margin-top: 5px;" class="btn-div">
+
+                <button class="hire-btn">Hire Me</button>
+
+                <button class="d-btn">Download Resume</button>
+
             </div>
         </div>
     </div>
+
     <!-- ---------------about------------ -->
     <div id="about">
         <div class="container">
@@ -75,148 +72,65 @@
                     <p>
                         Hello! My name is Meraj Siddique, and I am currently pursuing
                         (B.Tech) with a
-                        specialization in ( AI & ML ) at BNCET. As a second-year student, I am enthusiastic about
+                        specialization in ( AI & ML ) at BNCET. As a <span
+                            style="color: #ff0bc6; font-weight: bold;">3<sup>rd</sup> year</span> student, I am
+                        enthusiastic about
                         learning new
                         technologies and acquiring hands-on experience in various fields of engineering and programming.
                         My interests lie in
-                        areas like coding, web development, and exploring innovative tech solutions. I am excited to be
-                        part of this journey and
-                        eager to expand my knowledge and skills to contribute to future technological advancements.
+                        areas like coding, web development, and exploring innovative tech solutions. <br><br>
+                        Solved <span style="color: #ff0bc6; font-weight: bold;">130+ problems</span> on LeetCode,
+                        strengthening problem-solving skills and understanding of Data Structures and Algorithms.
                     </p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Projects</p>
+                        <p class="tab-links" onclick="opentab('experience')">Certifications</p>
                         <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
 
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>FRONT-END DEVELOPMENT</span><br>HTML, CSS, Java Script...</li>
-                            <li><span>BACK-END DEVELOPMENT</span><br>Java (Core Java, Oops, String, Collections, JDBC,
-                                Servlet, JSP), C language...</li>
-                            <li><span>DATABASE</span><br>MySQL...</li>
-                            <br>
-                            <div class="per">
-                                <div class="skill">
-                                    <div class="outer">
-                                        <div class="inner">
-                                            <div id="number">
-                                                80%
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="140px" height="140px">
-                                        <defs>
-                                            <linearGradient id="GradientColor">
-                                                <stop offset="0%" stop-color="#e91e63" />
-                                                <stop offset="100%" stop-color="#673ab7" />
-                                            </linearGradient>
-                                        </defs>
-                                        <circle cx="60" cy="60" r="55" stroke-linecap="round" />
-                                    </svg>
+                            <li><span>Languages:</span><br>C, JavaScript (ES6+), Java, Python</li>
 
-                                </div>
+                            <li><span>Frontend:</span><br>React.js,React Boostrap,Tailwind CSS, HTML, CSS</li>
 
-                                <script>
-                                    let number = document.getElementById("number");
-                                    let counter = 0;
-                                    setInterval(() => {
-                                        if (counter == 80) {
-                                            clearInterval();
-                                        }
-                                        else {
-                                            counter += 1;
-                                            number.innerHTML = counter + "%<br>HTML";
-                                        }
-                                    }, 25);
-                                </script>
+                            <li><span>Backend</span><br>Node.js, Express.js, REST APIs, Authentication & Authorization
+                            </li>
 
-                                <div class="skill">
-                                    <div class="outer">
-                                        <div class="inner">
-                                            <div id="number1">
-                                                70%
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                                        <defs>
-                                            <linearGradient id="GradientColor">
-                                                <stop offset="0%" stop-color="#e91e63" />
-                                                <stop offset="100%" stop-color="#673ab7" />
-                                            </linearGradient>
-                                        </defs>
-                                        <circle class="circle2" cx="60" cy="60" r="55" stroke-linecap="round" />
-                                    </svg>
+                            <li><span>Databases:</span><br>MySql,MangoDB</li>
 
-                                </div>
-
-                                <script>
-                                    let number1 = document.getElementById("number1");
-                                    let counter1 = 0;
-                                    setInterval(() => {
-                                        if (counter1 == 70) {
-                                            clearInterval();
-                                        }
-                                        else {
-                                            counter1 += 1;
-                                            number1.innerHTML = counter1 + "%<br>CSS";
-                                        }
-                                    }, 30);
-                                </script>
-
-                                <div class="skill">
-                                    <div class="outer">
-                                        <div class="inner">
-                                            <div id="number2">
-                                                50%
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                                        <defs>
-                                            <linearGradient id="GradientColor">
-                                                <stop offset="0%" stop-color="#e91e63" />
-                                                <stop offset="100%" stop-color="#673ab7" />
-                                            </linearGradient>
-                                        </defs>
-                                        <circle class="circle3" cx="60" cy="60" r="55" stroke-linecap="round" />
-                                    </svg>
-
-                                </div>
-
-                                <script>
-                                    let number2 = document.getElementById("number2");
-                                    let counter2 = 0;
-                                    setInterval(() => {
-                                        if (counter2 == 50) {
-                                            clearInterval();
-                                        }
-                                        else {
-                                            counter2 += 1;
-                                            number2.innerHTML = counter2 + "%<br>JavaScript";
-                                        }
-                                    }, 40);
-                                </script>
-                            </div>
+                            <li><span>DevOps & Tools:</span><br>Git, GitHub, Postman, Hopscotch</li>
+                            <li><span>Core Concepts:</span><br>Data Structures & Algorithms (DSA), OOP, DBMS,OS </li>
                         </ul>
                     </div>
-
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>YouTube CLONE</span><br>Using HTML, CSS, Javascript...</li>
-                            <li><span>TIC TAC TOE GAME</span><br>Using HTML, CSS, Javascript</li>
-                            <li><span>SHADI.com</span><br>Using Core Java...</li>
-                            <li><span>AGE CALCULATOR</span><br>Using HTML, CSS, Javascript...</li>
-                            <li><span>WEATHER APP</span><br>Using HTML, CSS, Javascript...</li>
+                            <li><span>Google Developers Group (GDG) Co-Lead at BNCET</span><br>-B.N College Of
+                                Engineering & Technology 2024-2025</li>
+
+                            <li><span>Hack With Uttar Pradesh (Hackathon)</span><br>-Chandigarh University Lucknow 2025
+                            </li>
+
+                            <li><span>GenAI Hackathon</span><br>-by Google AI Community Lucknow 2025</li>
+
+                            <li><span>Machine Learning Workshop</span><br>-Softpro India Lucknow 2025</li>
+
+                            <li><span>Ideathon 2024</span><br>IEEE BNCET 2024</li>
                         </ul>
                     </div>
 
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2020</span><br>High School<br>marks 87.3%</li>
-                            <li><span>2022</span><br>Intermediate<br>marks 79.8%</li>
-                            <li><span>Current</span><br>B.Tech CSE AI & ML</li>
+                            <li><span>B.Tech in Computer Science and Engineering (AI&ML) </span><br>- B.N College Of
+                                Engineering & Technology (BNCET), Lucknow<br>2023-2027 | CGPA: 8+</li>
+
+                            <li><span>Senior Secondary Education (Class XII)</span><br>-L.N National Senior Seccondary
+                                School <br>2021-2022 | Percentage: 79.8%</li>
+
+                            <li><span>Secondary Education (Class X)</span><br>-L.N National Senior Seccondary School
+                                <br>2019-2020 | Percentage: 87.3%
+                            </li>
+
                         </ul>
                     </div>
 
@@ -224,143 +138,159 @@
             </div>
         </div>
     </div>
-    <!-- ------------------services------------------- -->
-    <div id="services">
+    <!-- ------------------Problem Solving------------------- -->
+    <div id="problem">
         <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-globe"></i>
-                    <h2 class="heading">Web Design</h2>
-                    <p>
-                        As a web designer, I see my role as a blend of creativity and technical skill, where I transform
-                        ideas into engaging,
-                        functional websites. For me, it's about crafting visually appealing layouts, choosing the right
-                        color schemes, and
-                        creating an intuitive user experience that makes a website not only look good but work
-                        seamlessly.
-                    </p>
-                    <a href="https://www.w3schools.com/where_to_start.asp" target="_blank" title="Click Here">Learn more</a>
+            <div class="row" style="flex-wrap: wrap-reverse;">
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">Problem Solving</h1>
+                    <p style="margin-top: 50px;">Solved <span style="color: #ff0bc6; font-weight: bold;">130+
+                            problems</span> on LeetCode, gaining
+                        hands-on experience in Data Structures and Algorithms, including arrays, strings, and linked
+                        list problems, with a strong focus on optimization and clean code.</p>
+                    <h1 class="live-stats">Live Stats of <span style="color: white;">LeetCode</span> <a
+                            href="https://leetcode.com/u/merajsiddique07/" target="_blank"><img class="leetcode"
+                                src="./images/Leetcode.png " width="30px" alt="Leetcode"></a></h1>
+
+                    <div class="range-box">
+                        <div class="rank-box">
+                            <h2>Rank</h2>
+                            <span id="rank">1,125,700</span>
+                        </div>
+
+                        <div class="myChart">
+
+                            <div><span style="color:rgb(54, 197, 254);">Easy:</span> <span><input class="easy-range"
+                                        id="easy" title="69/935" min="0" max="935" value="69" type="range"
+                                        disabled></span></div>
+
+                            <div><span style="color: orange;">Medium:</span> <span><input id="medium" title="63/2033"
+                                        min="0" max="2033" value="63" type="range" disabled></span></div>
+
+                            <div><span style="color: rgb(255, 124, 124);">Hard:</span> <span><input id="hard"
+                                        title="6/920" min="0" max="920" value="6" type="range" disabled></span></div>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <span id="total-Solve" style="font-size: 30px; font-weight: bold;">130</span>/<span
+                                    id="total">3000</span> ✔️Solved
+                            </div>
+                        </div>
+
+                        <div class="leetcode-dash">
+                            <div><span style="color: rgb(54, 197, 254);">Easy</span> <br> <span id="easy-box">
+                                    69/935</span></div>
+                            <div><span style="color: orange;">Medium </span><br> <span id="medium-box">
+                                    62/2033</span></div>
+                            <div><span style="color: rgb(255, 93, 93);">Hard </span><br> <span
+                                    id="hard-box">6/920</span> </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <i class="fa-brands fa-java"></i>
-                    <h2 class="heading">Java Developer</h2>
-                    <p>
-                        As a Java developer, I see myself as someone who builds efficient, scalable, and robust
-                        applications. Java’s versatility
-                        allows me to work on a wide range of projects, from backend systems and desktop applications to
-                        mobile apps and
-                        enterprise solutions.
-                    </p>
-                    <a href="https://www.javatpoint.com/java-tutorial" target="_blank" title="Click Here">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-google"></i>
-                    <h2 class="heading">Co-Lead of GDG at BNCET</h2>
-                    <p>
-                        As a co-lead in Google Developer Group (GDG), I take pride in fostering a collaborative environment where developers can
-                        learn, grow, and share knowledge. My role involves organizing events, workshops, and meetups that connect the tech
-                        community, providing opportunities to explore the latest Google technologies, frameworks, and tools.
-                    </p>
-                    <a href="https://gdg.community.dev/u/m27gcw/" target="_blank" title="Click Here">Learn more</a>
+
+                <div class="about-col-1">
+                    <img src="images/badge.jpeg">
                 </div>
             </div>
         </div>
     </div>
 
     <!-- --------------portfolio--------------- -->
-    <div id="portfolio">
+    <div id="Projects">
         <div class="container">
-            <h1 class="sub-title">My Work</h1>
+            <h1 class="sub-title">Projects</h1>
             <div class="work-list">
+                     <div class="work">
+                    <img src="images/work-7.jpeg">
+                    <div class="layer">
+                        <h3>
+                            Safora-Women Safety System
+                        </h3>
+                        <p>
+                           Safora is a smart, real-time emergency response application built to ensure women’s safety in critical situations. With features like SOS alerts, live location tracking, loud alarms, and automatic video recording, it provides instant access to help when it’s needed most. 
+                        </p>
+                        <a href="https://vercel-frontend-pi-ten.vercel.app/" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
                 <div class="work">
+                    <img src="images/work-8.jpeg">
+                    <div class="layer">
+                        <h3>
+                            Certificate Generator
+                        </h3>
+                        <p>
+                            I developed a certificate generator.It focuses on simplifying participant interaction through features such as certificate generation, event highlights, and team representation. The project is designed to enhance user experience, promote innovation, and provide an efficient digital solution for organizing and presenting technical events.
+                        </p>
+                        <a href="https://merajsiddique07.github.io/certificateGenerator/" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images\work-9.jpeg">
+                    <div class="layer">
+                        <h3>
+                            Swasth Sarthi-AI Powered Web App
+                        </h3>
+                        <p>
+                            The aim of Swasth Sarthi is to build a smart healthcare assistance platform that supports users with personalized medical guidance, especially for pregnancy care and daily wellness. It focuses on providing timely support through features like AI-based health assistance, instant doctor connectivity, live health analysis, and customized physical activity plans.
+                        </p>
+                        <a href="https://swasth-sar.netlify.app/" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="hidden" id="extraCode">
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/work-4.jpg">
+                        <div class="layer">
+                            <h3>
+                                Tic Tac Toe
+                            </h3>
+                            <p>
+                                I’m currently designed responsive Tic Tac Toe web app for all devices. The game offers a
+                                single "play with friend" mode and includes sound and music for a more interactive
+                                experience. Built using HTML, CSS, and JavaScript.
+                            </p>
+                            <a href="https://merajsiddique07.github.io/Tic-Tac-Toe-by-Meraj/" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/work-5.jpg">
+                        <div class="layer">
+                            <h3>
+                                TechCrunch Business
+                            </h3>
+                            <p>
+                                An innovative and fully responsive business website designed to showcase products,
+                                connect with customers, and deliver a seamless user experience across all devices.
+                            </p>
+                            <a href="https://merajsiddique07.github.io/TechCrunch/" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                     <div class="work">
                     <img src="images/work-1.jpg">
                     <div class="layer">
                         <h3>
                             YouTube Clone
                         </h3>
                         <p>
-                        I created a YouTube clone to replicate the core functionalities of the popular video-sharing platform. This project
-                        allowed me to better understand how complex video platforms are structured and how various features interact to provide
-                        a seamless user experience.
+                            I created a YouTube clone to replicate the core functionalities of the popular video-sharing
+                            platform. This project
+                            allowed me to better understand how complex video platforms are structured and how various
+                            features interact to provide
+                            a seamless user experience.
                         </p>
-                        <a href="https://merajsiddique07.github.io/Youtube-Clone/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://merajsiddique07.github.io/Youtube-Clone/" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="images/work-2.jpg">
-                    <div class="layer">
-                        <h3>
-                            Age Calculator
-                        </h3>
-                        <p>
-                        I developed an age calculator to simplify the process of calculating a person's age based on their date of birth. The
-                        tool provides users with an accurate age in years, months, and days. It’s designed to be intuitive, fast, and
-                        user-friendly.
-                        </p>
-                        <a href="https://merajsiddique07.github.io/Age-Calculator/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images\work-3.jpg">
-                    <div class="layer">
-                        <h3>
-                            Weather App
-                        </h3>
-                        <p>
-                        I developed an interactive weather app where users can check current weather 
-                            conditions by simply searching for any city. This tool provides 
-                            real-time temperature, humidity, wind speed, and other essential
-                             weather details, making it easy to stay informed about weather 
-                             conditions anywhere in the world.
-                        </p>
-                        <a href="https://merajsiddique07.github.io/Weather-App/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
                 </div>
             </div>
-
-          
-             <div class="hidden" id="extraCode">
-                <div class="work-list">
-                <div class="work">
-                    <img src="images/work-4.jpg">
-                    <div class="layer">
-                        <h3>
-                            Tic Tac Toe
-                        </h3>
-                        <p>
-                       I’m currently designed responsive Tic Tac Toe web app for all devices. The game offers a single "play with friend" mode and includes sound and music for a more interactive experience. Built using HTML, CSS, and JavaScript.
-                        </p>
-                        <a href="https://merajsiddique07.github.io/Tic-Tac-Toe-by-Meraj/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-5.jpg">
-                    <div class="layer">
-                        <h3>
-                            TechCrunch Business
-                        </h3>
-                        <p>
-                        An innovative and fully responsive business website designed to showcase products, 
-                            connect with customers, and deliver a seamless user experience across all devices.
-                        </p>
-                        <a href="https://merajsiddique07.github.io/TechCrunch/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images\work-6.jpg">
-                    <div class="layer">
-                        <h3>
-                            COMING SOON...
-                        </h3>
-                        <p>
-                        Waiting...
-                        </p>
-                        <a href="https://merajsiddique07.github.io/Weather-App/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-          </div>
             <button class="btn" id="toggleButton"> See more</button>
         </div>
     </div>
@@ -370,17 +300,17 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane" title="Email"></i> merajsheikh962857@gmail.com</p>
+                    <p><i class="fa-solid fa-paper-plane" title="Email"></i> merajsiddique9628@gmail.com</p>
                     <p><i class="fa-solid fa-square-phone" title="Call Me"></i> 9120836xxx</p>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/sheikh.meraj.96?mibextid=ZbWKwL" target="_blank" title="Facebook"><i
-                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/sheikh.meraj.96?mibextid=ZbWKwL" target="_blank"
+                            title="Facebook"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://www.instagram.com/invites/contact/?i=vjpcj9u8d5ux&utm_content=3visgi2"
                             target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/merajsiddique07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                             target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://x.com/merajsiddique07?t=AuSY3KVj1ygeEpEv839fLQ&s=09" target="_blank" title="Twitter"><i
-                                class="fa-brands fa-square-twitter"></i></i></a>
+                        <a href="https://x.com/merajsiddique07?t=AuSY3KVj1ygeEpEv839fLQ&s=09" target="_blank"
+                            title="Twitter"><i class="fa-brands fa-square-twitter"></i></i></a>
                     </div>
                     <a id="dbtn" href="images\my-cv.pdf" download class="btn btn2" title="Download CV">Download CV</a>
                 </div>
@@ -448,71 +378,75 @@
     </script>
 
     <script>
-        // Set the initial state from localStorage
-        let isHeartRed = localStorage.getItem('heartClicked') === 'true';
 
-        // Reference to the heart button and audio element
-        const heartButton = document.querySelector('.heart-btn');
-        const heartSound = document.getElementById('heart-sound');
 
-        // On page load, check if the heart should be red
-        if (isHeartRed) {
-            heartButton.classList.add('active'); // Keep the heart red if the user has already clicked
-        }
+        document.getElementById("toggleButton").addEventListener("click", function () {
+            const extraCode = document.getElementById("extraCode");
 
-        // Add event listener to the heart button
-        heartButton.addEventListener('click', function () {
-            // If the heart isn't red yet, turn it red and store the state
-            if (!isHeartRed) {
-                this.classList.add('active');  // Heart becomes red
-                localStorage.setItem('heartClicked', 'true');  // Save the state in localStorage
-                isHeartRed = true;  // Update the flag
-            }
-
-            // Play the sound effect
-            heartSound.currentTime = 0;  // Reset sound to start
-            heartSound.play();  // Play sound
-
-            // Continue creating small hearts on every click, even if heart is red
-            for (let i = 0; i < 5; i++) { // Generate 5 small hearts
-                createSmallHeart();
+            if (extraCode.classList.contains("show")) {
+                // Collapse content
+                extraCode.style.height = "0";
+                extraCode.classList.remove("show");
+                this.textContent = "Show More";
+            } else {
+                // Expand content
+                extraCode.style.height = extraCode.scrollHeight + "px";
+                extraCode.classList.add("show");
+                this.textContent = "Show Less";
             }
         });
 
-        function createSmallHeart() {
-            const heartContainer = document.querySelector('.heart-container');
-            const smallHeart = document.createElement('i');
-            smallHeart.classList.add('fas', 'fa-heart', 'small-heart');
+    </script>
 
-            // Randomize the starting position around the heart button
-            smallHeart.style.left = `${Math.random() * 40 - 20}px`; // Randomize horizontal position slightly
-            smallHeart.style.top = `${Math.random() * 10 - 5}px`;   // Randomize vertical position slightly
+    <script>
 
-            heartContainer.appendChild(smallHeart);
+        async function getData() {
+            try {
+                const res = await fetch(
+                    "https://leetcode-api-faisalshohag.vercel.app/merajsiddique07"
+                );
 
-            // Remove the heart after the animation (1 second)
-            setTimeout(() => {
-                smallHeart.remove();
-            }, 1000);
+                if (!res.ok) throw new Error("API down");
+
+                const data = await res.json();
+
+                return data;
+
+            } catch (err) {
+                console.log("Using fallback data");
+
+                return {
+                    easySolved: 70,
+                    mediumSolved: 63,
+                    hardSolved: 6,
+                    totalSolved: 139
+                };
+            }
         }
 
-          document.getElementById("toggleButton").addEventListener("click", function() {
-    const extraCode = document.getElementById("extraCode");
-    
-    if (extraCode.classList.contains("show")) {
-        // Collapse content
-        extraCode.style.height = "0";
-        extraCode.classList.remove("show");
-        this.textContent = "Show More";
-    } else {
-        // Expand content
-        extraCode.style.height = extraCode.scrollHeight + "px";
-        extraCode.classList.add("show");
-        this.textContent = "Show Less";
-    }
-});
-        
+        async function main() {
+            const data = await getData();
+            const totalEasy = data.totalEasy;
+            const totalMedium = data.totalMedium;
+            const totalHard = data.totalHard;
+            document.getElementById("rank").innerText = data.ranking.toLocaleString();
+            document.getElementById("easy").value = data.easySolved;
+            document.getElementById("easy-box").innerHTML = data.easySolved + "/" + totalEasy;
+            document.getElementById("easy").title = data.easySolved + "/" + totalEasy;
+
+            document.getElementById("medium").value = data.mediumSolved;
+            document.getElementById("medium").title = data.mediumSolved + "/" + totalMedium;
+            document.getElementById("medium-box").innerHTML = data.mediumSolved + "/" + totalMedium;
+
+            document.getElementById("hard").value = data.hardSolved;
+            document.getElementById("hard").title = data.hardSolved + "/" + totalHard;
+            document.getElementById("hard-box").innerHTML = data.hardSolved + "/" + totalHard;
+            document.getElementById("total-Solve").innerText = data.easySolved + data.mediumSolved + data.hardSolved;
+            document.getElementById("total").innerText = data.totalQuestions;
+        }
+
     </script>
+
 </body>
 
 </html>
